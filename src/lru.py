@@ -1,4 +1,4 @@
-import os 
+from utils.io import read_input
 from typing import Optional
 class Node:
     def __init__(self, key=0, val=0) -> None:
@@ -61,13 +61,7 @@ def simulate_lru(k, requests):
             misses += 1
     return misses
 
-def read_input(filename: str):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    filepath = os.path.join(script_dir, '..', 'data', filename)
-    with open(filepath, 'r') as f:
-        k, m = map(int, f.readline().split())
-        requests = list(map(int, f.readline().split()))
-    return k, requests
+
 
 if __name__ == "__main__":
     k, requests = read_input("example.in")
