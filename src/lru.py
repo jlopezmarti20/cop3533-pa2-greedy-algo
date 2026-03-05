@@ -1,4 +1,4 @@
-from utils.io import read_input
+
 from typing import Optional
 class Node:
     def __init__(self, key=0, val=0) -> None:
@@ -60,15 +60,3 @@ def simulate_lru(k, requests):
             lruCache.put(req)
             misses += 1
     return misses
-
-
-
-if __name__ == "__main__":
-    k, requests = read_input("example.in")
-    misses = simulate_lru(k, requests)
-    print(misses)
-
-# 2 6
-# 1 2 1 3 1 2
-# cache  = 1 3
-# misses = 4
