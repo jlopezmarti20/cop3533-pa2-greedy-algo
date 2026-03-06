@@ -74,6 +74,24 @@ OPTFF: X
 
 ---
 
+## Example Input and Output
+
+An example input file and its expected output are provided in the `data/` directory:
+
+```
+data/
+example.in
+example.out
+```
+
+You can reproduce the output by running:
+
+```bash
+python src/main.py data/example.in
+```
+
+---
+
 ## Test Inputs
 
 Test input files are located in the `tests/` directory:
