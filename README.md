@@ -1,34 +1,108 @@
 # COP3533 Programming Assignment 2 — Greedy Caching Algorithms
 
-## Members
+## Students
 
-Jesus Lopez - 13
+- Jesus Lopez — UFID: 1328-5108
 
-## Testing Results
+---
 
-We tested the three caching algorithms (FIFO, LRU, and OPTFF) using three input files located in the `tests/` directory.  
-Each test contains **50 page requests** with different cache sizes.
+# Project Overview
 
-| Test File | Cache Size (k) | Requests (m) | FIFO Misses | LRU Misses | OPTFF Misses |
-| --------- | -------------- | ------------ | ----------- | ---------- | ------------ |
-| test1.in  | 3              | 50           | 47          | 48         | 26           |
-| test2.in  | 2              | 50           | 42          | 42         | 26           |
-| test3.in  | 4              | 50           | 46          | 46         | 22           |
+This project implements and compares three caching algorithms:
 
-## Observations
+- FIFO (First-In First-Out)
+- LRU (Least Recently Used)
+- OPTFF (Farthest-in-Future / Optimal Caching)
 
-- OPTFF consistently produced the fewest cache misses, which matches theory since OPTFF is the optimal offline caching algorithm that uses knowledge of future requests to make eviction decisions.
-- FIFO and LRU sometimes produced the same number of misses, depending on the request pattern.
-- In some sequences (such as Test 1), LRU performed slightly worse than FIFO, showing that cache performance depends heavily on the access pattern.
+The program reads a sequence of page requests and reports the number of cache misses for each caching policy.
 
-## How to Run
+---
+
+# How to Run the Program
 
 From the root directory of the repository:
 
 ```bash
 python src/main.py <input_file>
+```
 
-## Example
+Example:
 
+```bash
+python src/main.py data/example.in
+```
+
+or
+
+```bash
 python src/main.py tests/test1.in
 ```
+
+---
+
+## Input Format
+
+Each input file follows this format:
+
+```
+k m
+r1 r2 r3 ... rm
+```
+
+Where:
+
+- k = cache size
+- m = number of page requests
+- r1 ... rm = sequence of page requests
+
+Example:
+
+```
+3 12
+1 2 3 4 1 2 5 1 2 3 4 5
+```
+
+## Output Format
+
+The program prints the number of cache misses for each policy:
+
+```
+FIFO : X
+LRU  : X
+OPTFF: X
+```
+
+---
+
+## Test Inputs
+
+Test input files are located in the `tests/` directory:
+
+```
+tests/
+test1.in
+test2.in
+test3.in
+test_bad_sequence.in
+```
+
+Example:
+
+```bash
+python src/main.py tests/test1.in
+```
+
+---
+
+## Written Questions
+
+The written components of the assignment are located in the `questions/` directory:
+
+```
+questions/
+question1_Empirical_Comparison.md
+question2_bad_sequence.md
+question3_FF_optimality.png
+```
+
+These files contain the answers to the written questions for the assignment.
