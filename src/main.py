@@ -1,10 +1,10 @@
 import sys
 import fifo
+import lru
+import optff
 
 
 # this file reads the input, runs the cache simulations, prints miss count
-
-
 def main():
     if len(sys.argv) < 2:
         print("Usage: python main.py <input_file>")
@@ -31,7 +31,14 @@ def main():
         sys.exit(1)
 
     fifo_misses = fifo.simulate_fifo(k, requests)
+    lru_misses = lru.simulate_lru(k, requests)
+    optff_misses = optff.simulate_optff(k, requests)
+
     print(f"FIFO : {fifo_misses}")
+    print(f"LRU  : {lru_misses}")
+    print(f"OPTFF: {optff_misses}")
+    
+
     
 if __name__ == "__main__":
     main()
