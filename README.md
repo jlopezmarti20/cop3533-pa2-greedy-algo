@@ -3,6 +3,7 @@
 ## Students
 
 - Jesus Lopez — UFID: 1328-5108
+- Christian Betancourt Dias - UFID: 3082-3881
 
 ---
 
